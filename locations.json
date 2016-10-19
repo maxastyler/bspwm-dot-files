@@ -28,7 +28,7 @@
 	},
 	"vim": {
 		"files_to_link":{
-			"vimrc":"~/.vimrc"
+			".vimrc":"~/.vimrc"
 		},
 		"scripts_to_run":{
 
@@ -37,7 +37,7 @@
 	},
 	"zsh": {
 		"files_to_link":{
-			"zshrc":"~/.zshrc"	
+			".zshrc":"~/.zshrc"	
 		},
 		"scripts_to_run":{
 
