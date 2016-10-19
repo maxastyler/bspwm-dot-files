@@ -1,0 +1,47 @@
+{
+	"bspwm":{
+		"files_to_link":{
+			"bspwmrc":"~/.config/bspwm/bspwmrc"
+		},
+		"scripts_to_run":{
+
+		}
+
+	},
+	"lemonbar": {
+		"files_to_link":{
+			"panel":"~/.config/lemonbar/panel",
+			"panel_bar":"~/.config/lemonbar/panel_bar",
+			"panel_colors":"~/.config/lemonbar/panel_colors"
+		},
+		"scripts_to_run":{
+
+		}
+	},
+	"sxhkd": {
+		"files_to_link":{
+			"sxhkdrc":"~/.config/sxhkd/sxhkdrc"
+		},
+		"scripts_to_run":{
+
+		}
+	},
+	"vim": {
+		"files_to_link":{
+			"vimrc":"~/.vimrc"
+		},
+		"scripts_to_run":{
+
+		}
+
+	},
+	"zsh": {
+		"files_to_link":{
+			"zshrc":"~/.zshrc"	
+		},
+		"scripts_to_run":{
+
+		}
+
+	}
+}
