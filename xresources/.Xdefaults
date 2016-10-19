@@ -24,7 +24,10 @@
 *color7:  #cccccc
 *color15: #ffffff
 
-*background: black
 *foreground: white
+*background: black
+
+URxvt*transparent: true
+URxvt*shading: 15
 
 URxvt*font: xft:Source Code Pro:pixelsize=13

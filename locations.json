@@ -46,7 +46,8 @@
 	},
 	"xresources": {
 		"files_to_link":{
-			".Xresources":"~/.Xresources"
+			".Xresources":"~/.Xresources",
+			".Xdefaults":"~/.Xdefaults"
 		},
 		"scripts_to_run":{
 		}
