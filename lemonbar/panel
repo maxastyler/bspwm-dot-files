@@ -1,5 +1,15 @@
 #! /bin/sh
 
+##############################
+#When using this panel config with bspwm, /etc/profile needs to be edited to change some environment variables
+#These are:
+#export PANEL_FIFO="/tmp/panel-fifo"
+#export PATH=$PATH:/home/max/.config/lemonbar
+#export PANEL_HEIGHT=24
+#export PANEL_FONT="_*_fixed_*_*_*_*_10_*_*_*_*_*_*_*"
+#export PANEL_WM_NAME=bspwm_panel
+##############################
+
 if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
 	exit 1
