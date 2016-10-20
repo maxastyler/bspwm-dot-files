@@ -1,33 +1,35 @@
 #Colours
 ! Black + DarkGrey
-*color0:  #000000
-*color8:  #555753
+*color0: #483f4c
+*color8: #504245
 ! DarkRed + Red
-*color1:  #ff6565
-*color9:  #ff8d8d
+*color1: #7a4922
+*color9: #5f462c
 ! DarkGreen + Green
-*color2:  #93d44f
-*color10: #c8e7a8
+*color2: #584a3a
+*color10: #f2b460
 ! DarkYellow + Yellow
-*color3:  #eab93d
-*color11: #ffc123
+*color3: #694827
+*color11: #e3843a
 ! DarkBlue + Blue
-*color4:  #204a87
-*color12: #3465a4
+*color4: #433f4f
+*color12: #474051
 ! DarkMagenta + Magenta
-*color5:  #ce5c00
-*color13: #f57900
+*color5: #bb602b
+*color13: #955326
 !DarkCyan + Cyan (both not tango)
-*color6:  #89b6e2
-*color14: #46a4ff
+*color6: #433f4f
+*color14: #483f4c
 ! LightGrey + White
-*color7:  #cccccc
-*color15: #ffffff
+*color7: #544a40
+*color15: #514a51
 
-*foreground: white
-*background: black
+*foreground: #f2b460
+*background: #483f4c
 
 URxvt*transparent: true
-URxvt*shading: 15
+URxvt*shading: 20
 
-URxvt*font: xft:Source Code Pro:pixelsize=13
+URxvt*scrollBar: false
+
+URxvt*font: xft:terminus:size=10
