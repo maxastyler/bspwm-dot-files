@@ -51,5 +51,12 @@
 		},
 		"scripts_to_run":{
 		}
+	},
+	"ncmpcpp": {
+		"files_to_link":{
+			"bindings":"~/.ncmpcpp/bindings"
+		},
+		"scripts_to_run":{
+		}
 	}
 }
