@@ -1,34 +1,32 @@
-#Colours
-! Black + DarkGrey
-*color0: #161a14
-*color8: #293122
-! DarkRed + Red
-*color1: #bfbbbe
-*color9: #dcafcc
-! DarkGreen + Green
-*color2: #b09d9d
-*color10: #dccfde
-! DarkYellow + Yellow
-*color3: #72541b
-*color11: #9a7168
-! DarkBlue + Blue
-*color4: #2a1913
-*color12: #464138
-! DarkMagenta + Magenta
-*color5: #490e0b
-*color13: #3f6907
-!DarkCyan + Cyan (both not tango)
-*color6: #e3e7ea
-*color14: #bcc5d0
-! LightGrey + White
-*color7: #d7d6db
-*color15: #f0f1f2
-
-*background: #161a14
-*foreground: #f0f1f2
-
-URxvt*transparency: true
-URxvt*shading: 30
-
-URxvt*font: xft:Source Code Pro:pixelsize=13
-
+File: ~/.Xresources
+! Terminal colors
+XTerm*faceName: Bitstream Vera Serif Mono
+xterm*faceSize: 10
+! special
+*.foreground: #EBD1B7
+*.background: #3b3228
+*.cursorColor: #d0c8c6
+! black
+*.color0: #3b3228
+*.color8: #7e705a
+! red
+*.color1: #d17b49
+*.color9: #d17b49
+! green
+*.color2: #beb55b
+*.color10: #beb55b
+! yellow
+*.color3: #f4bc87
+*.color11: #FFCC99
+! blue
+*.color4: #8ab3b5
+*.color12: #8ab3b5
+! magenta
+*.color5: #a89bb9
+*.color13: #a89bb9
+! cyan
+*.color6: #7bbda4
+*.color14: #7bbda4
+! white
+*.color7: #d0c8c6
+*.color15: #f5eeeb

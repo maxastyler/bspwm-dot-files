@@ -1,0 +1,21 @@
+#/usr/bin/env bash
+
+. panel_config
+
+while true; do
+	current="$(mpc current)"
+	if [ -z "$current" ]; then
+		music="|no music playing"	
+	else
+		mus_state="$mpc"
+		mus_state_a="$(mpc | awk ' FNR == 2 { print $1 } ')"
+		if [ "$mus_state_a" == '[playing]' ]; then
+			music="|$current -- $(mpc | awk 'FNR == 2 { print $3 }')"
+		else
+			music="|$current -- $(mpc | awk 'FNR == 2 { print $3 }')"
+
+		fi
+	fi
+	echo -e "M${music}  ${sep_right}"
+	sleep "$upd_mpd"
+done

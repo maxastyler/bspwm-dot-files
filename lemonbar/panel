@@ -3,37 +3,36 @@
 ##############################
 #When using this panel config with bspwm, /etc/profile needs to be edited to change some environment variables
 #These are:
-#export PANEL_FIFO="/tmp/panel-fifo"
 #export PATH=$PATH:/home/max/.config/lemonbar
-#export PANEL_HEIGHT=24
-#export PANEL_FONT="_*_fixed_*_*_*_*_10_*_*_*_*_*_*_*"
-#export PANEL_WM_NAME=bspwm_panel
 ##############################
 
-if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
+. panel_config
+
+if xdo id -a "$panel_name" > /dev/null ; then
 	printf "%s\n" "The panel is already running." >&2
 	exit 1
 fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
+[ -e "$panel_fifo" ] && rm "$panel_fifo"
+mkfifo "$panel_fifo"
 
-bspc config top_padding $PANEL_HEIGHT
-bspc subscribe report > "$PANEL_FIFO" &
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
+bspc config top_padding $geometry
+bspc subscribe report > "$panel_fifo" &
+xtitle -sf 'T%s' > "$panel_fifo" &
+clock -sf 'S%a %H:%M' > "$panel_fifo" &
+lemon_battery > "$panel_fifo" &
+lemon_volume > "$panel_fifo" &
+lemon_mpd > "$panel_fifo" &
 
-. panel_colors
+panel_bar < "$panel_fifo" | lemonbar -a 32 -n "$panel_name" -g "x${geometry}" -f "${font}" -f "${iconfont}" -F "${color_fore}" -B "${color_back}" | sh &
 
-panel_bar < "$PANEL_FIFO" | lemonbar -a 32 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" | sh &
-
-wid=$(xdo id -a "$PANEL_WM_NAME")
+wid=$(xdo id -a "$panel_name")
 tries_left=20
 while [ -z "$wid" -a "$tries_left" -gt 0 ] ; do
 	sleep 0.05
-	wid=$(xdo id -a "$PANEL_WM_NAME")
+	wid=$(xdo id -a "$panel_name")
 	tries_left=$((tries_left - 1))
 done
 [ -n "$wid" ] && xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"

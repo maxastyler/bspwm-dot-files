@@ -16,13 +16,35 @@ super + Escape
 
 #Audio
 XF86Audio{Raise,Lower}Volume
-	pamixer -{i,d} 5
+	pamixer -{i,d} 5;
 XF86AudioMute
-	pamixer -t
+	pamixer -t;
+
+XF86Audio{Play,Stop,Next,Prev}
+	mpc {toggle,stop,next,prev}
 
 #Brightness
 XF86MonBrightness{Up,Down}
 	light -{A,S} 5
+
+#
+#Program launcher hotkeys
+#
+
+XF86Launch3
+	urxvt -e ncmpcpp
+
+super + F1
+	urxvt -e vim
+
+super + F2
+	palemoon
+
+super + F3
+	urxvt -e ranger
+
+super + F4
+	pcmanfm
 
 #
 # bspwm hotkeys
