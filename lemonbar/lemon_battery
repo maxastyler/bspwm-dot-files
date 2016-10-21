@@ -6,8 +6,11 @@
 
 . panel_config
 
+command_string="%{A4:light -A 2:}%{A5:light -U 2:}"
+end_command_string="%{A}%{A}"
+
 while true; do
-	level="$(cat /sys/class/power_supply/BAT1/capacity)"
+	level="$(cat /sys/class/power_supply/${bat_loc}/capacity)"
 	if (( 85 < "$level" )); then
 		bat_string=""
 	elif (( 65 < "$level" <= 85 )); then
@@ -20,6 +23,6 @@ while true; do
 		bat_string=""
 	fi
 		
-	echo -e "B${level}% ${bat_string}  ${sep_right}"
+	echo -e "B${command_string}${level}% ${bat_string}${end_command_string}  ${sep_right}"
 	sleep "$upd_bat";
 done
